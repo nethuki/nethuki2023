@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="build/css/intlTelInput.css" />
+    <link rel="stylesheet" href="build/css/demo.css" />
+    <title>Ticket Booking - Details</title>
+    <style>
+      /* styles.css */
+
+      /* Global styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        background-color: rgb(224, 81, 172);
+        color: #000000;
+        padding: 9px;
+     /*   text-align: center;*/
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      form {
+        background-color: rgb(243, 220, 235);
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      .button{
+    background-color: rgb(129, 14, 108);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 15px;
+    /* align-items: center; */
+  }
+  button a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  } 
+  button:hover{
+    background-color:rgb(94, 0, 58);
+
+
+  }
+
+      .label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+        
+      }
+     
+
+      .input-group label {
+        display: inline-block;
+        width: 120px;
+      }
+
+      .input-group input[type="date"],
+      .input-group select,
+      .input-group input[type="number"] {
+        width: 150px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .table-container {
+        margin-bottom: 20px;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+      }
+
+      thead th {
+        background-color: rgb(246, 110, 196);
+        color: #060606;
+        padding: 10px;
+        text-align: left;
+      }
+
+      tbody td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tfoot td {
+        font-weight: bold;
+      }
+
+      .total-row td:first-child {
+        text-align: right;
+      }
+
+      .checkout-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color:rgb(224, 81, 172);
+        color: #010000;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .checkout-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      .footer {
+        background-color:  rgb(249, 165, 218);
+        color: #949191;
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .custom-dropdown {
+        position: relative;
+        width: 200px; /* Adjust the width as needed */
+      }
+
+      .selected-option {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .selected-flag {
+        width: 20px; /* Adjust the width as needed */
+        height: 15px; /* Adjust the height as needed */
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 10px; /* Adjust the spacing as needed */
+      }
+
+      /* Placeholder styles for flag images */
+      .flag-us {
+        background-image: url("./../../images/flags/us.svg");
+      }
+
+      .flag-in {
+        background-image: url("./../../images/flags/in.svg");
+      }
+
+      .flag-lk {
+        background-image: url("./../../images/flags/lk.svg");
+      }
+
+      .flag-nz {
+        background-image: url("./../../images/flags/nz.svg");
+      }
+
+      .selected-text {
+        flex-grow: 1;
+      }
+
+      .options {
+        position: absolute;
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+        width: 100%;
+      }
+
+      .option {
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .option:hover {
+        background-color: #f0f0f0;
+      }
+      .ticket{
+          text-align: center;
+        }
+
+        .footer {
+        background-color:  rgb(249, 165, 218);
+        color: #949191;
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      body{
+          background-image: url("./Hier\ erfahren\ Sie\,\ wie\ Sie\ Ihr\ Make-up\ so\ auftragen\,\ dass\ es\ auf\ Bildern\ unglaublich\ aussieht.jpeg");
+          height: 100vh;
+          background-size: cover;
+          background-position: center;          
+      }
+
+ 
+      /* Add this CSS to your existing styles */
+      .navbar {
+top: 10;
+width: 100%;
+z-index: 100;
+}
+
+.navbar-list {
+display: none;
+list-style-type: none;
+margin: 0;
+padding: 0;
+position: absolute;
+left: 50px;
+top: 80px;
+border: 3px solid rgb(6, 35, 1);
+
+width: 20%;
+/*text-align: center;*/
+
+}
+
+.navbar-list.show {
+display: block;
+}
+
+.navbar-list li {
+padding: 15px 0;
+font-size: 20px;
+}
+
+.navbar-list a {
+color: rgb(9, 62, 13);
+text-decoration: none;
+display: block;
+}
+
+.navbar-toggle {
+cursor: pointer;
+padding: 5px;
+float:l;
+}
+
+
+.bar {
+width: 30px;
+height: 4px;
+background-color: rgb(151, 8, 98);
+margin: 6px 0;
+transition: 0.4s;
+}
+
+      /* Responsive styles */
+      @media (max-width: 600px) {
+        .input-group label {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        .input-group input[type="date"],
+        .input-group select,
+        .input-group input[type="number"] {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <button class= "button" onclick="confirm('Are you Sure')" ><a href="index 2.html">BACK </a> </button>
+        <h1 class="ticket">Ticket Booking</h1>
+
+        <nav class="navbar">
+          <div class="navbar-toggle" onclick="toggleNav()">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+          </div>
+          <ul class="navbar-list" id="navbarList">
+              <li><a href="hikkaduwa-turtle-hatchery.html">Home</a></li>
+              <li><a href="index 2.html">Tickets</a></li>
+              <li><a href="detail-page.html">Details</a></li>
+              <li><a href="success-page.html">Payments</a></li>
+              <li><a href="confirmation-page.html">Confirmation</a></li>
+          </ul>
+               </nav>
+
+      </header>
+
+      <form id="details-form">
+        <h2>Enter your details</h2>
+        <div class="input-group">
+          <label for="full-name">Full Name:</label>
+          <input type="text" id="full-name" required />
+        </div>
+        <div class="input-group" style="display: flex">
+          <label for="mobile-number">Mobile Number:</label>
+          <input id="phone" name="phone" type="tel" required />
+        </div>
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="input-group">
+          <label for="confirm-email">Confirm Email:</label>
+          <input type="email" id="confirm-email" required />
+        </div>
+        <div class="input-group">
+          <label for="gender">Gender:</label>
+          <select id="gender">
+            <option value="Male" selected="selected">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+
+        <h2>Summary</h2>
+        <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Duration</th>
+              <th>Ticket Type</th>
+              <th>Quantity</th>
+              <th>Charges</th>
+            </tr>
+          </thead>
+          <tbody id="summary-table"></tbody>
+        </table>
+        <button id="continue-button" type="button" class="checkout-button" disabled>
+          Continue with purchase
+        </button>
+      </form>
+      <footer class="footer">&copy; 2023 Ticket Booking. All rights reserved.</footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const customDropdown = document.querySelector(".custom-dropdown");
+        const selectedOption = customDropdown.querySelector(".selected-option");
+        const optionsList = customDropdown.querySelector(".options");
+
+        selectedOption.addEventListener("click", () => {
+          optionsList.style.display = optionsList.style.display === "block" ? "none" : "block";
+        });
+
+        optionsList.addEventListener("click", (event) => {
+          const selectedValue = event.target.getAttribute("data-value");
+          const selectedFlag = event.target.getAttribute("data-flag");
+
+          selectedOption.querySelector(".selected-text").textContent = event.target.textContent;
+          selectedOption.querySelector(
+            ".selected-flag"
+          ).classList = `selected-flag flag-${selectedFlag}`;
+          optionsList.style.display = "none";
+
+          // Perform any action with the selected value
+          document.getElementById("phone").value = selectedValue;
+        });
+      });
+
+      function populateSummaryTable(summaryData) {
+        const summaryTable = document.getElementById("summary-table");
+
+        // Clear existing table rows
+        summaryTable.innerHTML = "";
+
+        // Iterate over the summaryData and create table rows
+        summaryData.forEach((data) => {
+          const row = document.createElement("tr");
+
+          // Create table cells and set their values
+          const dateCell = document.createElement("td");
+          dateCell.textContent = data.date;
+          row.appendChild(dateCell);
+
+          const durationCell = document.createElement("td");
+          durationCell.textContent = data.duration;
+          row.appendChild(durationCell);
+
+          const ticketTypeCell = document.createElement("td");
+          ticketTypeCell.textContent = data.ticket;
+          row.appendChild(ticketTypeCell);
+
+          const quantityCell = document.createElement("td");
+          quantityCell.textContent = data.quantity;
+          row.appendChild(quantityCell);
+
+          const chargesCell = document.createElement("td");
+          chargesCell.textContent = data.charges;
+          row.appendChild(chargesCell);
+
+          // Append the row to the table body
+          summaryTable.appendChild(row);
+        });
+      }
+
+      function validateFormDetails() {
+        const fullName = document.getElementById("full-name").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const confirmEmail = document.getElementById("confirm-email").value;
+
+        // Validate full name
+        if (fullName.length < 3) {
+          alert("Please enter a valid name");
+          return false;
+        }
+
+        // Validate mobile number
+        // if (phone.length < 10) {
+        //   alert("Please enter a valid phone number");
+        //   return false;
+        // } else {
+        //   const regex = /^[+][0-9]+$/;
+        //   if (!regex.test(phone)) {
+        //     alert("Please enter a valid phone number");
+        //     return false;
+        //   }
+        // }
+
+        // Validate email
+        if (email.length < 6 || email.indexOf("@") === -1) {
+          alert("Please enter a valid email");
+          return false;
+        }
+
+        // Validate confirm email
+        if (confirmEmail !== email) {
+          alert("Please enter a matching email");
+          return false;
+        }
+
+        return true;
+      }
+
+      function redirectToSuccessPage() {
+        if (!validateFormDetails()) {
+          return;
+        }
+
+        const summeryData = getSummaryData();
+        const gender = document.getElementById("gender");
+
+        const data = {
+          name: document.getElementById("full-name").value,
+          date: summeryData[0].date,
+          duration: summeryData[0].duration,
+          phone: document.getElementById("phone").value,
+          email: document.getElementById("email").value,
+          gender: gender.options[gender.selectedIndex].text,
+        };
+
+        // Save the summary data in local storage
+        localStorage.setItem("orderData", JSON.stringify(data));
+
+        // Redirect to the success page
+        window.location.href = "success-page.html";
+      }
+
+      function getSummaryData() {
+        const summaryTable = document.getElementById("summary-table");
+        const summaryData = [];
+
+        // Iterate over the table rows and extract the data
+        for (let i = 0; i < summaryTable.rows.length; i++) {
+          const row = summaryTable.rows[i];
+
+          const date = row.cells[0].textContent;
+          const duration = row.cells[1].textContent;
+          const ticketType = row.cells[2].textContent;
+          const quantity = row.cells[3].textContent;
+          const charges = row.cells[4].textContent;
+
+          summaryData.push({
+            date: date,
+            duration: duration,
+            ticketType: ticketType,
+            quantity: quantity,
+            charges: charges,
+          });
+        }
+
+        return summaryData;
+      }
+
+      function loadSummaryDataFromLocalStorage() {
+        const summaryDataString = localStorage.getItem("summaryData");
+
+        if (summaryDataString) {
+          try {
+            const summaryData = JSON.parse(summaryDataString);
+            populateSummaryTable(summaryData);
+          } catch (error) {
+            console.error("Error parsing summary data:", error);
+          }
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", loadSummaryDataFromLocalStorage);
+
+      function validateDetails() {
+        const name = document.getElementById("full-name").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const confirm_email = document.getElementById("confirm-email").value;
+        const _gender = document.getElementById("gender");
+        const gender = _gender.options[_gender.selectedIndex].text;
+
+        let isValid = true;
+
+        if (name === "") {
+          isValid = false;
+        }
+
+        if (phone === "") {
+          isValid = false;
+        }
+
+        if (email === "") {
+          isValid = false;
+        }
+
+        if (confirm_email === "") {
+          isValid = false;
+        }
+
+        if (email !== confirm_email) {
+          isValid = false;
+        }
+
+        const continueButton = document.getElementById("continue-button");
+        continueButton.disabled = !isValid;
+      }
+
+      const fullName = document.getElementById("full-name");
+      const phone = document.getElementById("phone");
+      const email = document.getElementById("email");
+      const confirmEmail = document.getElementById("confirm-email");
+      const gender = document.getElementById("gender");
+
+      fullName.addEventListener("input", validateDetails);
+      phone.addEventListener("input", validateDetails);
+      email.addEventListener("input", validateDetails);
+      confirmEmail.addEventListener("input", validateDetails);
+      gender.addEventListener("change", validateDetails);
+
+      // Add event listener to the continue button to trigger the redirection
+      const continueButton = document.getElementById("continue-button");
+      continueButton.addEventListener("click", redirectToSuccessPage);
+    </script>
+    <script src="build/js/intlTelInput.js"></script>
+    <script>
+      var input = document.querySelector("#phone");
+      window.intlTelInput(input, {
+        // allowDropdown: false,
+        // autoInsertDialCode: true,
+        // autoPlaceholder: "off",
+        // dropdownContainer: document.body,
+        // excludeCountries: ["us"],
+        // formatOnDisplay: false,
+        // geoIpLookup: function(callback) {
+        //   fetch("https://ipapi.co/json")
+        //     .then(function(res) { return res.json(); })
+        //     .then(function(data) { callback(data.country_code); })
+        //     .catch(function() { callback("us"); });
+        // },
+        // hiddenInput: "full_number",
+        // initialCountry: "auto",
+        // localizedCountries: { 'de': 'Deutschland' },
+        // nationalMode: false,
+        // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+        // placeholderNumberType: "MOBILE",
+        // preferredCountries: ['cn', 'jp'],
+        // separateDialCode: true,
+        // showFlags: false,
+        utilsScript: "build/js/utils.js"
+      });
+      function toggleNav() {
+  var navbarList = document.getElementById("navbarList");
+  if (navbarList.style.display === "block") {
+    navbarList.style.display = "none";
+  } else {
+    navbarList.style.display = "block";
+  }
+}
+    </script>
+  </body>
+</html>

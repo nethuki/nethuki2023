@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Confirmation Page</title>
+    <style>
+      /* styles.css */
+
+      /* Global styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    
+      .header {
+        background-color: rgb(224, 81, 172);
+        color: #000000;
+        padding: 9px;
+     /*   text-align: center;*/
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      form {
+        background-color: rgb(243, 220, 235);
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+  .button{
+    background-color: rgb(129, 14, 108);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 15px;
+    /* align-items: center; */
+  }
+
+  button a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  } 
+  button:hover{
+    background-color:rgb(94, 0, 58);
+
+  }
+
+      .label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      .input-group label {
+        display: inline-block;
+        width: 120px;
+      }
+
+      .input-group input[type="date"],
+      .input-group select,
+      .input-group input[type="number"] {
+        width: 200px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .table-container {
+        margin-bottom: 20px;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+      }
+
+      thead th {
+        background-color: rgb(246, 110, 196);
+        color: #060606;
+        padding: 10px;
+        text-align: left;
+      }
+
+      tbody td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tfoot td {
+        font-weight: bold;
+      }
+
+      .total-row td:first-child {
+        text-align: right;
+      }
+
+      .checkout-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(224, 81, 172);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .checkout-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+
+      .footer {
+        background-color: rgb(249, 165, 218);
+        color: #1a0e0e;
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .ticket{
+          text-align: center;
+        }
+
+        /* Add this CSS to your existing styles */
+
+      /* Add this CSS to your existing styles */
+      .navbar {
+top: 10;
+width: 100%;
+z-index: 100;
+}
+
+.navbar-list {
+display: none;
+list-style-type: none;
+margin: 0;
+padding: 0;
+position: absolute;
+left: 50px;
+top: 80px;
+border: 3px solid rgb(6, 35, 1);
+
+width: 20%;
+/*text-align: center;*/
+
+}
+
+.navbar-list.show {
+display: block;
+}
+
+.navbar-list li {
+padding: 15px 0;
+font-size: 20px;
+}
+
+.navbar-list a {
+color: rgb(9, 62, 13);
+text-decoration: none;
+display: block;
+}
+
+.navbar-toggle {
+cursor: pointer;
+padding: 5px;
+float:l;
+}
+
+.bar {
+width: 30px;
+height: 2px;
+background-color: rgb(151, 8, 98);
+margin: 6px 0;
+transition: 0.4s;
+}
+
+body{
+          background-image: url("./Tops\ &\ Tees\ for\ Women\ UK.jpeg");
+          background-size: cover;
+          background-position: center;   
+}
+      /* Responsive styles */
+      @media (max-width: 600px) {
+        .input-group label {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        .input-group input[type="date"],
+        .input-group select,
+        .input-group input[type="number"] {
+          width: 100%;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <button class= "button" onclick="confirm('Are you Sure')" ><a href="success-page.html">BACK </a> </button>
+        <h1 class="ticket">Ticket Booking</h1>
+
+        <nav class="navbar">
+          <div class="navbar-toggle" onclick="toggleNav()">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+          </div>
+          <ul class="navbar-list" id="navbarList">
+              <li><a href="hikkaduwa-turtle-hatchery.html">Home</a></li>
+              <li><a href="index 2.html">Tickets</a></li>
+              <li><a href="detail-page.html">Details</a></li>
+              <li><a href="success-page.html">Payments</a></li>
+              <li><a href="confirmation-page.html">Confirmation</a></li>
+          </ul>
+               </nav>
+
+      </header>
+<p></p>
+<p></p>
+      <h2 class="subheading">Confirmation</h2>
+
+      <div class="confirmation-message">
+        <p>
+          Thank you for your order. Your order has been confirmed with us. You can show this
+          confirmation at the entrance. Following is the summary of your order.
+        </p>
+      </div>
+
+      <h2 class="subheading">Order Summary</h2>
+
+      <div class="summary-table">
+        <table>
+          <tr>
+            <th>Name</th>
+            <td id="name"></td>
+          </tr>
+          <tr>
+            <th>Date</th>
+            <td id="date"></td>
+          </tr>
+          <tr>
+            <th>Time</th>
+            <td id="time"></td>
+          </tr>
+          <tr>
+            <th>Duration</th>
+            <td id="duration"></td>
+          </tr>
+          <tr>
+            <th>phone</th>
+            <td id="phone"></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td id="email"></td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td id="gender"></td>
+          </tr>
+          <tr>
+            <th>Tickets</th>
+            <th>Charges</th>
+          </tr>
+          <tbody id="summary-table-body">
+            <!-- Table rows will be dynamically added here -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">Total Payable</td>
+              <td id="total-payable"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <footer class="footer">&copy; 2023 Ticket Booking. All rights reserved.</footer>
+    </div>
+
+    <script>
+      // Function to retrieve data from local storage
+      function retrieveDataFromLocalStorage() {
+        const orderData = localStorage.getItem("orderData");
+        if (orderData) {
+          return JSON.parse(orderData);
+        }
+        return null;
+      }
+
+      // Function to display order summary based on data retrieved from local storage
+      function displayOrderSummary() {
+        const orderData = retrieveDataFromLocalStorage();
+
+        if (orderData) {
+          document.getElementById("name").textContent = orderData.name;
+          document.getElementById("date").textContent = orderData.date;
+          document.getElementById("time").textContent = orderData.duration;
+          document.getElementById("duration").textContent = "3hrs";
+          document.getElementById("phone").textContent = orderData.phone;
+          document.getElementById("email").textContent = orderData.email;
+          document.getElementById("gender").textContent = orderData.gender;
+
+          const summaryContainer = document.getElementById("summary-table-body");
+          let totalPayable = 0;
+
+          while (summaryContainer.firstChild) {
+            summaryContainer.firstChild.remove();
+          }
+
+          document.getElementById("total-payable").textContent = `$${orderData.totalPayable}`;
+        }
+      }
+
+      // Event listener for page load
+      window.addEventListener("load", () => {
+        displayOrderSummary();
+      });
+      function toggleNav() {
+  var navbarList = document.getElementById("navbarList");
+  if (navbarList.style.display === "block") {
+    navbarList.style.display = "none";
+  } else {
+    navbarList.style.display = "block";
+  }
+}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buy Tickets</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="cover">
+      <h1>Buy Tickets</h1>
+    </div>
+    <section id="datesSection">
+      <h2>Dates</h2>
+      <h4>When you are coming?</h4>
+      <input type="date" id="selectedDate" />
+    </section>
+    <section id="guestsSection">
+      <h2>Guests</h2>
+      <div>
+        <label for="slAdult">SL Adult:</label>
+        <input type="number" id="slAdult" min="0" />
+      </div>
+      <div>
+        <label for="slChild">SL Child:</label>
+        <input type="number" id="slChild" min="0" />
+      </div>
+      <div>
+        <label for="foreignerAdult">Foreigner Adult:</label>
+        <input type="number" id="foreignerAdult" min="0" />
+      </div>
+      <div>
+        <label for="foreignerChild">Foreigner Child:</label>
+        <input type="number" id="foreignerChild" min="0" />
+      </div>
+      <div>
+        <label for="infant">Infant:</label>
+        <input type="number" id="infant" min="0" />
+      </div>
+    </section>
+    <section id="durationSection">
+      <h2>Duration</h2>
+      <select id="durationSelect">
+        <option value="">Select duration</option>
+        <option value="normal">7.00am - 8.00am</option>
+        <option value="normal">8.00am - 9.00am</option>
+        <option value="peak">10.00am - 11.00am</option>
+        <option value="peak">11.00am - 12.00am</option>
+        <option value="peak">12.00pm - 1.00pm</option>
+        <option value="normal">1.00pm - 2.00pm</option>
+        <option value="normal">2.00pm - 3.00pm</option>
+        <option value="peak">3.00pm - 4.00pm</option>
+        <option value="peak">4.00pm - 5.00pm</option>
+        <option value="peak">5.00pm - 6.00pm</option>
+      </select>
+    </section>
+    <section id="pricingSection">
+      <h2>Pricing</h2>
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Peak/Normal</th>
+          <th>Charge per hour</th>
+        </tr>
+        <tr>
+          <td>SL Adult</td>
+          <td>normal</td>
+          <td>4 USD</td>
+        </tr>
+        <tr>
+          <td>SL Adult</td>
+          <td>peak</td>
+          <td>6 USD</td>
+        </tr>
+        <tr>
+          <td>SL Child</td>
+          <td>normal</td>
+          <td>2 USD</td>
+        </tr>
+        <tr>
+          <td>SL Child</td>
+          <td>peak</td>
+          <td>3 USD</td>
+        </tr>
+        <tr>
+          <td>Foreigner Adult</td>
+          <td>normal</td>
+          <td>10 USD</td>
+        </tr>
+        <tr>
+          <td>Foreigner Adult</td>
+          <td>peak</td>
+          <td>13 USD</td>
+        </tr>
+        <tr>
+          <td>Foreigner Child</td>
+          <td>normal</td>
+          <td>5 USD</td>
+        </tr>
+        <tr>
+          <td>Foreigner Child</td>
+          <td>peak</td>
+          <td>8 USD</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Summary</h2>
+      <table id="summaryTable">
+        <thead>
+          <tr>
+            <th>Ticket Type</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Summary table rows will be added dynamically -->
+        </tbody>
+      </table>
+      <p id="totalPayable">Total Payable: 0 USD</p>
+    </section>
+    <button id="continueBtn" disabled>Continue with purchase</button>
+
+    <script src="script.js"></script>
+    <!------
+
+ 
+  <section id="summarySection">
+    <h2>Summary</h2>
+    <table id="summaryTable">
+      <tr>
+        <th>Category</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td>SL Adult</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>SL Child</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Foreigner Adult</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Foreigner Child</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Infant</td>
+        <td>0</td>
+      </tr>
+    </table>
+    <p id="totalPayable">Total Payable: 0 USD</p>
+  </section>
+  <button id="continueBtn">Continue with purchase</button>
+  ---->
+  </body>
+</html>

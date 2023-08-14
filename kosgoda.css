@@ -1,0 +1,199 @@
+/* Set default font family and size */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    }
+    
+    /* Set background color for body */
+    body {
+    background-color: #f2f2f2;
+    }
+    
+    /* Style for header */
+    header {
+    background-color: #333;
+    color: #d6d1d1;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    /* Style for h1 tag inside header */
+    header h1 {
+    margin: 0;
+    }
+    
+    /* Style for menu */
+    nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    }
+    
+    nav li {
+    margin: 0 8px;
+    position: relative; /* make parent item relative */
+    }
+    
+    nav a {
+      padding: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px; /* set the font size to 16 pixels */
+    }
+    
+    nav a:hover {
+    background-color: #555;
+    }
+    
+    /* Style for submenu */
+    nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%; /*position the submenu below the parent item */
+    left: 0;
+    background-color: #333;
+    padding: 10px;
+    }
+    
+    nav ul li:hover > ul {
+    display: block; /* show the submenu on hover */
+    }
+    
+    nav ul ul li {
+    margin: 0;
+    }
+    
+    nav ul ul a {
+    padding: 5px;
+    }
+    
+    nav ul ul a:hover {
+    background-color: #555;
+    }
+    
+    /* Style for main content section */
+    main {
+    margin: 20px;
+    }
+    
+    /* Style for table */
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Style for table headers */
+    th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    }
+    table td img {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    /* Style for table cells */
+    td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    }
+    
+    /* Style for footer */
+    footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    }
+    .footer-image {
+      width: 100%;
+      max-width: 1200px; /* Adjust this value as needed */
+      height: auto;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+    
+    .gallery img:hover {
+      opacity: 0.7;
+    }
+    
+    .gallery img.fade-in {
+      opacity: 1;
+    }
+    
+    .gallery img:nth-child(1) {
+      animation: fade-in 0.5s ease-in-out forwards;
+    }
+    
+    .gallery img:nth-child(2) {
+      animation: fade-in 0.5s ease-in-out 0.2s forwards;
+    }
+    
+    .gallery img:nth-child(3) {
+      animation: fade-in 0.5s ease-in-out 0.4s forwards;
+    }
+    
+    .gallery img:nth-child(4) {
+      animation: fade-in 0.5s ease-in-out 0.6s forwards;
+    }
+    
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    section.location img {
+      width: 100%;
+  }
+  img:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }  

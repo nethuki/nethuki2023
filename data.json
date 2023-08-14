@@ -1,0 +1,11 @@
+[
+  {
+    "Date": "<current_date>",
+    "Time": "07:00 am to 08:00 am",
+    "Duration": "1 hrs (01 Normal : 00 Peak)",
+    "Tickets": {
+      "1 Foreigner Adult": "$10"
+    },
+    "Total Payable": "$10"
+  }
+]

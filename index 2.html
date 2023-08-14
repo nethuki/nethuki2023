@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ticket Booking</title>
+    <style>
+      /* styles.css */
+
+      /* Global styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        background-color: rgb(224, 81, 172);
+        color: #000000;
+        padding: 9px;
+     /*   text-align: center;*/
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      form {
+        background-color: rgb(243, 220, 235);
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      .button{
+    background-color: rgb(129, 14, 108);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 5px 15px;
+   align-items:center; 
+
+  }
+  .navbar-list{
+    background-color: white;
+  }
+  button a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  } 
+  button:hover{
+    background-color: rgb(94, 0, 58);
+
+  }
+      .label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .input-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .input-group label {
+        display: inline-block;
+        width: 120px;
+      }
+
+      .input-group input[type="date"],
+      .input-group select,
+      .input-group input[type="number"] {
+        width: 200px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .table-container {
+        margin-bottom: 20px;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+      }
+
+      thead th {
+        background-color:  rgb(246, 110, 196);
+        color: #000000;
+        padding: 10px;
+        text-align: left;
+      }
+
+      tbody td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tfoot td {
+        font-weight: bold;
+      }
+
+      .total-row td:first-child {
+        text-align: right;
+      }
+
+      .checkout-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color:  rgb(224, 81, 172);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .checkout-button:disabled {
+        background-color: #e6dddd;
+        cursor: not-allowed;
+      }
+
+      .footer {
+        background-color: rgb(249, 165, 218);
+        color: #181111;
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .ticket{
+          text-align: center;
+        }
+
+      /* Add this CSS to your existing styles */
+.navbar {
+top: 10;
+width: 100%;
+z-index: 100;
+}
+
+.navbar-list {
+display: none;
+list-style-type: none;
+margin: 0;
+padding: 0;
+position: absolute;
+left: 50px;
+top: 80px;
+border: 3px solid rgb(6, 35, 1);
+
+width: 20%;
+/*text-align: center;*/
+
+}
+
+.navbar-list.show {
+display: block;
+}
+
+.navbar-list li {
+padding: 15px 0;
+font-size: 20px;
+}
+
+.navbar-list a {
+color: rgb(9, 62, 13);
+text-decoration: none;
+display: block;
+}
+
+.navbar-toggle {
+cursor: pointer;
+padding: 5px;
+float:l;
+}
+
+.bar {
+width: 30px;
+height: 2px;
+background-color: rgb(1, 1, 1);
+margin: 6px 0;
+transition: 0.4s;
+}
+
+body{
+          background-image: url("Beach\ Cover-Up\ Free\ Knitting\ Pattern.jpeg");
+          background-size: cover;
+          background-position: center;          
+      }
+      
+      /* Responsive styles */
+      @media (max-width: 600px) {
+        .input-group label {
+          width: 100%;
+          display: block;
+          margin-bottom: 5px;
+        
+      }
+        .input-group input[type="date"],
+        .input-group select,
+        .input-group input[type="number"] {
+          width: 100%;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"/>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <button class= "button" onclick="confirm('Are you Sure')" ><a href="hikkaduwa-turtle-hatchery.html">BACK </a> </button>
+        <h1 class="ticket">Ticket Booking</h1>
+
+        <nav class="navbar">
+          <div class="navbar-toggle" onclick="toggleNav()">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+          </div>
+          <ul class="navbar-list" id="navbarList">
+              <li><a href="hikkaduwa-turtle-hatchery.html">Home</a></li>
+              <li><a href="index 2.html">Tickets</a></li>
+              <li><a href="detail-page.html">Details</a></li>
+              <li><a href="success-page.html">Payments</a></li>
+              <li><a href="confirmation-page.html">Confirmation</a></li>
+          </ul>
+        </nav>
+
+      </header>
+
+      <form>
+        <div class="input-group">
+          <label for="date-input">Select Date:</label>
+          <input type="date" id="date-input" />
+        </div>
+        <div class="input-group">
+          <label for="duration">Select Duration:</label>
+          <select id="duration">
+            <option value="07:00-08:00">07:00-08:00</option>
+            <option value="08:00-09:00">08:00-09:00</option>
+            <option value="10:00-11:00">10:00-11:00 (PEAK)</option>
+            <option value="11:00-12:00">11:00-12:00 (PEAK)</option>
+            <option value="12:00-01:00">12:00-01:00 (PEAK)</option>
+            <option value="03:00-04:00">03:00-04:00 (PEAK)</option>
+            <option value="04:00-05:00">04:00-05:00 (PEAK)</option>
+            <option value="05:00-06:00">05:00-06:00 (PEAK)</option>
+
+          </select>
+        </div>
+        <div id="guests-container">
+          <h2>Guests</h2>
+          <div class="input-group">
+            <label for="type">Ticket Type:</label>
+            <select id="type">
+              <option value="0">Sri Lankan</option>
+              <option value="1">Foreigner</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="adults">Number of Adults:</label>
+            <div class="counter">
+              <button class="decrement" type="button">-</button>
+              <span class="count" id="adults">0</span>
+              <button class="increment" type="button">+</button>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="children">Number of Children:</label>
+            <div class="counter">
+              <button class="decrement" type="button">-</button>
+              <span class="count" id="children">0</span>
+              <button class="increment" type="button">+</button>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="infants">Number of Infants:</label>
+            <div class="counter">
+              <button class="decrement" type="button">-</button>
+              <span class="count" id="infants">0</span>
+              <button class="increment" type="button">+</button>
+            </div>
+          </div>
+        </div>
+        <button
+          id="checkout-button"
+          type="button"
+          onclick="saveSummaryTableToLocalStorage();"
+          disabled>
+          Continue Purchase
+        </button>
+      </form>
+<p></p>
+<p></p>
+      <h2>Summary</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Duration</th>
+              <th>Ticket Type</th>
+              <th>Quantity</th>
+              <th>Charges</th>
+            </tr>
+          </thead>
+          <tbody id="summary-table-body">
+            <!-- Table rows will be dynamically added here -->
+          </tbody>
+          <tfoot>
+            <tr class="total-row">
+              <td colspan="4">Total Amount:</td>
+              <td id="total-amount">$0</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <footer class="footer">&copy; 2023 Ticket Booking. All rights reserved.</footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+      // Charge rates for different ticket types
+      const chargeRates = {
+        "Foreigner Adult": { normal: 10, peak: 13 },
+        "Foreigner Child": { normal: 5, peak: 8 },
+        "SL Adult": { normal: 4, peak: 6 },
+        "SL Child": { normal: 2, peak: 3 },
+        Infant: { normal: 0, peak: 0 },
+      };
+
+      // Function to check if the selected duration is during peak hours
+      function isPeakHour(duration) {
+        const peakHours = ["10:00-13:00", "15:00-18:00"];
+        return peakHours.includes(duration);
+      }
+
+      // Function to update the summary table based on user selections
+      function updateSummaryTable() {
+        const selectedDuration = durationSelect.value;
+        const selectedGuestType = guestTypeSelect.value;
+        const selectedAdults = parseInt(document.getElementById("adults").textContent);
+        const selectedChildren = parseInt(document.getElementById("children").textContent);
+        const selectedInfants = parseInt(document.getElementById("infants").textContent);
+
+        // Calculate the total number of tickets for each type
+        const tickets = {
+          "Foreigner Adult": selectedGuestType === "1" ? selectedAdults : 0,
+          "Foreigner Child": selectedGuestType === "1" ? selectedChildren : 0,
+          "SL Adult": selectedGuestType === "0" ? selectedAdults : 0,
+          "SL Child": selectedGuestType === "0" ? selectedChildren : 0,
+          Infant: selectedInfants,
+        };
+
+        // Calculate the total payable amount
+        let totalPayable = 0;
+        const summaryContainer = document.getElementById("summary-table-body");
+        while (summaryContainer.firstChild) {
+          summaryContainer.firstChild.remove();
+        }
+
+        // Create a new row for each ticket type and calculate charges
+        for (const ticket in tickets) {
+          const quantity = tickets[ticket];
+          if (quantity > 0) {
+            let chargeRate = chargeRates[ticket].normal; // Default charge rate
+            if (isPeakHour(selectedDuration)) {
+              chargeRate = chargeRates[ticket].peak; // Use peak hour charge rate if applicable
+            }
+            const charges = quantity * chargeRate;
+
+            // Add a row to the summary table
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+            <td>${document.getElementById("date-input").value}</td>
+            <td>${selectedDuration}</td>
+            <td>${ticket}</td>
+            <td>${quantity}</td>
+            <td>${charges}</td>
+          `;
+            summaryContainer.appendChild(newRow);
+
+            totalPayable += charges;
+          }
+        }
+
+        // Update the total amount
+        const totalAmount = document.getElementById("total-amount");
+        totalAmount.textContent = `Total Amount: $${totalPayable}`;
+
+        // Enable the checkout button if the total payable amount is greater than 0
+        const checkoutButton = document.getElementById("checkout-button");
+        checkoutButton.disabled = totalPayable <= 0;
+      }
+
+      //  Counter functionality
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        const decrementButton = counter.querySelector(".decrement");
+        const incrementButton = counter.querySelector(".increment");
+        const countSpan = counter.querySelector(".count");
+
+        let count = 0;
+
+        decrementButton.addEventListener("click", () => {
+          if (count > 0) {
+            count--;
+            countSpan.textContent = count;
+          }
+        });
+
+        incrementButton.addEventListener("click", () => {
+          count++;
+          countSpan.textContent = count;
+        });
+
+        decrementButton.addEventListener("click", updateSummaryTable);
+        incrementButton.addEventListener("click", updateSummaryTable);
+      });
+
+      // Event listener for page load
+      window.addEventListener("load", () => {
+        // Fetch data from data.json
+        fetch("data.json")
+          .then((response) => response.json())
+          .then((data) => {
+            // Populate the default table using the data from data.json
+            const summaryContainer = document.getElementById("summary-table-body");
+            for (const row of data) {
+              const newRow = document.createElement("tr");
+              newRow.innerHTML = `
+              <td>${row.date}</td>
+              <td>${row.duration}</td>
+              <td>${row.ticket}</td>
+              <td>${row.quantity}</td>
+              <td>${row.charges}</td>
+            `;
+              summaryContainer.appendChild(newRow);
+            }
+
+            // Update the summary table
+            updateSummaryTable();
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      });
+
+      // Event listener for date selection change
+      const dateInput = document.getElementById("date-input");
+      dateInput.addEventListener("change", updateSummaryTable);
+
+      // Event listener for guests section change
+      const guestsContainer = document.getElementById("guests-container");
+      guestsContainer.addEventListener("change", updateSummaryTable);
+
+      // Event listener for duration selection change
+      const durationSelect = document.getElementById("duration");
+      durationSelect.addEventListener("change", updateSummaryTable);
+
+      // Event listener for guest type selection change
+      const guestTypeSelect = document.getElementById("type");
+      guestTypeSelect.addEventListener("change", updateSummaryTable);
+
+      function saveSummaryTableToLocalStorage() {
+        const summaryTableRows = document.querySelectorAll("#summary-table-body tr");
+        const summaryData = [];
+
+        summaryTableRows.forEach((row) => {
+          const columns = row.querySelectorAll("td");
+          const rowData = {
+            date: columns[0].textContent,
+            duration: columns[1].textContent,
+            ticket: columns[2].textContent,
+            quantity: columns[3].textContent,
+            charges: columns[4].textContent,
+          };
+          summaryData.push(rowData);
+        });
+
+        // Check if summaryData array is not empty
+        if (summaryData.length > 0) {
+          // Convert the summaryData array to a JSON string
+          const summaryDataString = JSON.stringify(summaryData);
+
+          localStorage.setItem("summaryData", summaryDataString);
+
+          // Redirect the user to the detail-page.html with the constructed URL
+          setTimeout(() => {
+            window.location.href = "detail-page.html";
+          }, 100);
+        } else {
+          // Handle empty summaryData array case
+          console.log("Summary data is empty");
+        }
+      }
+      function toggleNav() {
+  var navbarList = document.getElementById("navbarList");
+  if (navbarList.style.display === "block") {
+    navbarList.style.display = "none";
+  } else {
+    navbarList.style.display = "block";
+  }
+}
+    </script>
+  </body>
+</html>
